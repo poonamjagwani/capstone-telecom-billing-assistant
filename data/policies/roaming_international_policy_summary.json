@@ -1,0 +1,18 @@
+{
+  "document_type": "policy",
+  "source_pdf": "roaming_international_policy.pdf",
+  "title": "Roaming and International Services Policy",
+  "topics": [
+    "roaming",
+    "international_rates",
+    "travel_passes",
+    "data_roaming",
+    "long_distance",
+    "usage_alerts"
+  ],
+  "effective_date": "2025-02-01",
+  "version": "1.2",
+  "page_count": 1,
+  "short_description": "Roaming zones, travel passes, international rates, and how usage is billed outside Canada.",
+  "carrier_name": "NovaTel Communications"
+}

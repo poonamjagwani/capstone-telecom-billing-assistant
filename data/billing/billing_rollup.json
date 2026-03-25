@@ -1,0 +1,39 @@
+{
+  "currency": "CAD",
+  "account": {
+    "id": "TEL-2025-78432",
+    "customer_name": "Sarah Mitchell"
+  },
+  "months": [
+    {
+      "period": "Oct 2025",
+      "source_pdf": "billing_2025_10.pdf",
+      "total_due": 97.5
+    },
+    {
+      "period": "Nov 2025",
+      "source_pdf": "billing_2025_11.pdf",
+      "total_due": 97.5
+    },
+    {
+      "period": "Dec 2025",
+      "source_pdf": "billing_2025_12.pdf",
+      "total_due": 103.0
+    },
+    {
+      "period": "Jan 2026",
+      "source_pdf": "billing_2026_01.pdf",
+      "total_due": 97.5
+    },
+    {
+      "period": "Feb 2026",
+      "source_pdf": "billing_2026_02.pdf",
+      "total_due": 252.0
+    },
+    {
+      "period": "Mar 2026",
+      "source_pdf": "billing_2026_03.pdf",
+      "total_due": -45.0
+    }
+  ]
+}

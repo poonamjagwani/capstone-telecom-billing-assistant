@@ -1,0 +1,42 @@
+{
+  "document_type": "billing_statement",
+  "source_pdf": "billing_2025_11.pdf",
+  "period": {
+    "label": "Nov 2025",
+    "start": "2025-11-01",
+    "end": "2025-11-30"
+  },
+  "due_date": "2025-12-22",
+  "account": {
+    "id": "TEL-2025-78432",
+    "customer_name": "Sarah Mitchell"
+  },
+  "plan": {
+    "name": "Unlimited Plus",
+    "monthly_charge": 85.0,
+    "currency": "CAD"
+  },
+  "line_items": [
+    {
+      "category": "base_plan",
+      "description": "Unlimited Plus (monthly)",
+      "amount": 85.0
+    },
+    {
+      "category": "taxes_fees",
+      "description": "GST/HST and regulatory fees",
+      "amount": 12.5
+    }
+  ],
+  "totals": {
+    "subtotal": 85.0,
+    "taxes": 12.5,
+    "total_due": 97.5,
+    "currency": "CAD"
+  },
+  "notes": [
+    "Regular monthly charges.",
+    "Paperless discount already included in plan where applicable."
+  ],
+  "page_count": 1
+}

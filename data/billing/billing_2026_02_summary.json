@@ -1,0 +1,47 @@
+{
+  "document_type": "billing_statement",
+  "source_pdf": "billing_2026_02.pdf",
+  "period": {
+    "label": "Feb 2026",
+    "start": "2026-02-01",
+    "end": "2026-02-28"
+  },
+  "due_date": "2026-03-21",
+  "account": {
+    "id": "TEL-2025-78432",
+    "customer_name": "Sarah Mitchell"
+  },
+  "plan": {
+    "name": "Unlimited Plus",
+    "monthly_charge": 85.0,
+    "currency": "CAD"
+  },
+  "line_items": [
+    {
+      "category": "base_plan",
+      "description": "Unlimited Plus (monthly)",
+      "amount": 85.0
+    },
+    {
+      "category": "roaming_international",
+      "description": "International roaming - voice, SMS, data (Europe)",
+      "amount": 142.5
+    },
+    {
+      "category": "taxes_fees",
+      "description": "GST/HST and regulatory fees",
+      "amount": 24.5
+    }
+  ],
+  "totals": {
+    "subtotal": 227.5,
+    "taxes": 24.5,
+    "total_due": 252.0,
+    "currency": "CAD"
+  },
+  "notes": [
+    "Unusually high international roaming charges.",
+    "If you did not travel, review device settings or report possible SIM misuse."
+  ],
+  "page_count": 1
+}

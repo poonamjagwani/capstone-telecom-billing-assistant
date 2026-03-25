@@ -1,0 +1,20 @@
+{
+  "document_type": "policy",
+  "source_pdf": "billing_and_payment_policy.pdf",
+  "title": "Billing and Payment Policy",
+  "topics": [
+    "billing_cycle",
+    "payment_due_date",
+    "payment_methods",
+    "late_fees",
+    "auto_pay",
+    "partial_payments",
+    "disputes",
+    "paperless_billing"
+  ],
+  "effective_date": "2025-01-01",
+  "version": "2.1",
+  "page_count": 2,
+  "short_description": "How NovaTel bills accounts, when payments are due, accepted payment methods, late fees, Auto-Pay, and paperless billing.",
+  "carrier_name": "NovaTel Communications"
+}

@@ -1,0 +1,41 @@
+{
+  "document_type": "billing_statement",
+  "source_pdf": "billing_2026_01.pdf",
+  "period": {
+    "label": "Jan 2026",
+    "start": "2026-01-01",
+    "end": "2026-01-31"
+  },
+  "due_date": "2026-02-20",
+  "account": {
+    "id": "TEL-2025-78432",
+    "customer_name": "Sarah Mitchell"
+  },
+  "plan": {
+    "name": "Unlimited Plus",
+    "monthly_charge": 85.0,
+    "currency": "CAD"
+  },
+  "line_items": [
+    {
+      "category": "base_plan",
+      "description": "Unlimited Plus (monthly)",
+      "amount": 85.0
+    },
+    {
+      "category": "taxes_fees",
+      "description": "GST/HST and regulatory fees",
+      "amount": 12.5
+    }
+  ],
+  "totals": {
+    "subtotal": 85.0,
+    "taxes": 12.5,
+    "total_due": 97.5,
+    "currency": "CAD"
+  },
+  "notes": [
+    "Normal month - usage within plan limits."
+  ],
+  "page_count": 1
+}

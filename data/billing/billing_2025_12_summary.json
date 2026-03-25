@@ -1,0 +1,46 @@
+{
+  "document_type": "billing_statement",
+  "source_pdf": "billing_2025_12.pdf",
+  "period": {
+    "label": "Dec 2025",
+    "start": "2025-12-01",
+    "end": "2025-12-31"
+  },
+  "due_date": "2026-01-21",
+  "account": {
+    "id": "TEL-2025-78432",
+    "customer_name": "Sarah Mitchell"
+  },
+  "plan": {
+    "name": "Unlimited Plus",
+    "monthly_charge": 85.0,
+    "currency": "CAD"
+  },
+  "line_items": [
+    {
+      "category": "base_plan",
+      "description": "Unlimited Plus (monthly)",
+      "amount": 85.0
+    },
+    {
+      "category": "usage_overage",
+      "description": "Additional data (one-time)",
+      "amount": 5.0
+    },
+    {
+      "category": "taxes_fees",
+      "description": "GST/HST and regulatory fees",
+      "amount": 13.0
+    }
+  ],
+  "totals": {
+    "subtotal": 90.0,
+    "taxes": 13.0,
+    "total_due": 103.0,
+    "currency": "CAD"
+  },
+  "notes": [
+    "Small data overage during holiday travel within Canada."
+  ],
+  "page_count": 1
+}

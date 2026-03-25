@@ -1,0 +1,47 @@
+{
+  "document_type": "billing_statement",
+  "source_pdf": "billing_2026_03.pdf",
+  "period": {
+    "label": "Mar 2026",
+    "start": "2026-03-01",
+    "end": "2026-03-31"
+  },
+  "due_date": "2026-04-21",
+  "account": {
+    "id": "TEL-2025-78432",
+    "customer_name": "Sarah Mitchell"
+  },
+  "plan": {
+    "name": "Unlimited Plus",
+    "monthly_charge": 85.0,
+    "currency": "CAD"
+  },
+  "line_items": [
+    {
+      "category": "base_plan",
+      "description": "Unlimited Plus (monthly)",
+      "amount": 85.0
+    },
+    {
+      "category": "taxes_fees",
+      "description": "GST/HST and regulatory fees",
+      "amount": 12.5
+    },
+    {
+      "category": "credit_adjustment",
+      "description": "Billing adjustment - Feb 2026 roaming dispute (approved)",
+      "amount": -142.5
+    }
+  ],
+  "totals": {
+    "subtotal": -57.5,
+    "taxes": 12.5,
+    "total_due": -45.0,
+    "currency": "CAD"
+  },
+  "notes": [
+    "Credit applied for disputed international roaming from Feb 2026 statement.",
+    "No payment due this cycle; a small credit balance may appear on your next bill."
+  ],
+  "page_count": 1
+}

@@ -1,0 +1,18 @@
+{
+  "document_type": "policy",
+  "source_pdf": "refund_policy.pdf",
+  "title": "Refund and Dispute Policy",
+  "topics": [
+    "refunds",
+    "billing_disputes",
+    "investigation_timeline",
+    "credits",
+    "chargebacks",
+    "escalation"
+  ],
+  "effective_date": "2025-01-01",
+  "version": "1.4",
+  "page_count": 1,
+  "short_description": "Rules for refunds, credits, billing disputes, investigations, and chargebacks.",
+  "carrier_name": "NovaTel Communications"
+}
