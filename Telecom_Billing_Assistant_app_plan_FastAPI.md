@@ -22,7 +22,7 @@ Same capabilities as the capstone scope: RAG, DuckDuckGo tool agent, deep resear
 
 ---
 
-## 3. Telecom Billing Assistant - Architecture
+## 3. AI Powered Telecom Billing Assistant - Architecture
 
 ```mermaid
 graph TB
