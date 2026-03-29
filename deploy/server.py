@@ -27,7 +27,7 @@ from core.router import classify_intent
 from core.tool_agent import web_search
 
 settings = get_settings()
-rag_engine = RagEngine(settings.index_dir, settings.billing_dir, settings.policies_dir)
+rag_engine = RagEngine(settings)
 
 
 @asynccontextmanager

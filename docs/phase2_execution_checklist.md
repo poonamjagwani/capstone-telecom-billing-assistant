@@ -9,9 +9,9 @@ This checklist translates `Telecom_Billing_Assistant_app_plan_FastAPI.md` into i
 
 ## 2) Core modules
 - [x] `core/llm_provider.py` for Ollama + optional OpenAI-compatible setup *(starter health hint + config wiring)*
-- [x] `core/rag_engine.py` for index build/load/query over PDFs *(starter local summary index; FAISS wiring pending)*
-- [x] `core/tool_agent.py` for DuckDuckGo-backed web lookup
-- [x] `core/research_agent.py` for dispute-style report generation
+- [x] `core/rag_engine.py` for index build/load/query over PDFs *(FAISS semantic retrieval enabled over billing + policy PDFs; query-aware reranking + deduped sources)*
+- [x] `core/tool_agent.py` for DuckDuckGo-backed web lookup *(retry + query expansion for competitor-plan prompts)*
+- [x] `core/research_agent.py` for dispute-style report generation *(single-flow v1; multi-agent synthesis deferred)*
 - [x] `core/chart_generator.py` for billing JSON -> Plotly figures
 - [x] `core/router.py` for intent routing (`rag`, `chart`, `research`, `web`)
 - [x] `core/models.py` Pydantic request/response models
@@ -27,8 +27,8 @@ This checklist translates `Telecom_Billing_Assistant_app_plan_FastAPI.md` into i
 - [x] Render text, chart JSON, and markdown research reports
 
 ## 5) Validation
-- [ ] Smoke test each route with one happy-path request
-- [ ] Validate Feb anomaly and Mar credit flows in chart + research paths
+- [x] Smoke test each route with one happy-path request
+- [x] Validate Feb anomaly and Mar credit flows in chart + research paths
 - [ ] Update README run instructions for three processes (Ollama, FastAPI, Streamlit)
 
 ## 6) Hardening (after happy path)
