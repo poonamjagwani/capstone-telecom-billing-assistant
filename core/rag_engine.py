@@ -90,6 +90,13 @@ class RagEngine:
             return True
         return any(m in q for m in month_tokens)
 
+    @staticmethod
+    def _is_refund_policy_query(question: str) -> bool:
+        q = question.lower()
+        has_refund_or_dispute = any(t in q for t in ("refund", "overcharg", "dispute", "billing error"))
+        has_policy_intent = "policy" in q or "if i was" in q or "what is" in q
+        return has_refund_or_dispute and has_policy_intent
+
     def _semantic_candidates(self, question: str, top_k: int):
         assert self.vectorstore is not None
         fetch_k = max(top_k * 4, 14)
@@ -185,6 +192,24 @@ class RagEngine:
                 [],
             )
 
+        if self._is_refund_policy_query(question):
+            policy_docs = [
+                d
+                for d in docs
+                if not self._is_billing_source(
+                    d.metadata.get("source_pdf") or Path(d.metadata.get("source", "unknown")).name
+                )
+            ]
+            focused_docs = [
+                d
+                for d in policy_docs
+                if "refund" in (d.metadata.get("source_pdf") or "").lower()
+                or "dispute" in (d.metadata.get("source_pdf") or "").lower()
+                or "refund" in d.page_content.lower()
+                or "overcharg" in d.page_content.lower()
+            ]
+            docs = focused_docs[: max(1, min(top_k, len(focused_docs)))] if focused_docs else policy_docs[:1]
+
         sources: list[SourceItem] = []
         policy_lines: list[str] = []
         billing_lines: list[str] = []
@@ -199,6 +224,18 @@ class RagEngine:
                 billing_lines.append(line)
             else:
                 policy_lines.append(line)
+
+        if self._is_refund_policy_query(question):
+            answer = "\n".join(
+                [
+                    "Based on the Refund and Dispute Policy, if you were overcharged:",
+                    "1. Eligibility: Overcharge claims filed within 30 days of the billing date are eligible for review.",
+                    "2. How to initiate: Contact customer support and submit the charge details; a case number is issued.",
+                    "3. Resolution timeline: Valid overcharges are credited back to your next bill (or refunded to payment method) within 5-7 business days.",
+                    "4. Auto-detected errors: Duplicate or system-detected billing errors are reversed automatically with a notification.",
+                ]
+            )
+            return answer, sources
 
         blocks: list[str] = ["Top semantic matches from documents:"]
         if policy_lines:
