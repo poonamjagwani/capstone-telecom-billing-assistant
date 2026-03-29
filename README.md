@@ -1,6 +1,8 @@
 # Telecom Billing Assistant (Capstone)
 
-An **AI-assisted telecom billing demo**: answer questions from policy and bill PDFs (**RAG**), plot trends from structured billing data (**Plotly**), run **dispute-style research**, and use **web search** — with a **FastAPI** backend and **Streamlit** UI (planned). All customer names, carriers, and amounts are **synthetic**.
+> **Capstone Highlights:** Built an end-to-end AI telecom assistant with FastAPI + Streamlit, FAISS-based RAG over billing/policy PDFs, dispute research reporting, chart analytics, and relevance-filtered competitor plan search - focused on explainability, reliability, and demo-ready UX.
+
+An **AI-assisted telecom billing demo**: answer questions from policy and bill PDFs (**RAG**), plot trends from structured billing data (**Plotly**), run **dispute-style research**, and use **web search** — with a **FastAPI** backend and **Streamlit** UI. All customer names, carriers, and amounts are **synthetic**.
 
 **Repository folder:** `capstone-telecom-billing-assistant`
 
@@ -13,7 +15,29 @@ An **AI-assisted telecom billing demo**: answer questions from policy and bill P
 | Phase | Scope | Status |
 |-------|--------|--------|
 | **1 — Data** | Synthetic policy + billing PDFs, per-PDF `*_summary.json`, generator script | **Done** |
-| **2 — App** | `core/`, FastAPI (`deploy/server.py`), Streamlit (`app.py`), FAISS from PDFs, Ollama + optional OpenAI-compatible API | Not started — follow the application plan (§12) |
+| **2 — App** | `core/`, FastAPI (`deploy/server.py`), Streamlit (`app.py`), FAISS from PDFs, Ollama + optional OpenAI-compatible API | **Done (v1 complete)** |
+
+---
+
+## Capstone Achievements
+
+- Built a full **FastAPI + Streamlit** application with four production-style assistant flows: **Billing Q&A**, **Visual Charts**, **Dispute Analysis**, **Web Search**.
+- Implemented **FAISS semantic retrieval** over policy and billing PDFs with query-aware reranking and deduped citations.
+- Delivered a polished, mockup-aligned UI with stable tab behavior, per-tab conversation memory, and source expansion.
+- Added deterministic **dispute research reporting** that correlates billing anomalies with policy evidence.
+- Hardened web search with retry logic, telecom relevance filtering, and price-aware ranking near the customer plan.
+- Maintained dataset consistency through one generator script for PDFs + JSON summaries.
+
+---
+
+## Learning Outcomes (What this capstone demonstrates)
+
+- **RAG engineering:** moving from keyword retrieval to vector search with traceable evidence.
+- **AI product architecture:** clear separation between API orchestration and UI presentation.
+- **Data modeling for AI apps:** mixing unstructured PDF knowledge with structured JSON analytics.
+- **Reliability/debugging:** handling stateful UI edge cases, intent-routing quality, and endpoint failures.
+- **Prompting + deterministic controls:** combining model outputs with rule-based ranking for safer user responses.
+- **Demo-readiness mindset:** iterating from prototype behavior to user-trust-worthy experience.
 
 ---
 
@@ -44,7 +68,7 @@ This writes:
 
 ---
 
-## Planned architecture (Phase 2)
+## Architecture (Implemented v1)
 
 - **FastAPI** — Routes such as `/health`, `/v1/rag/query`, `/v1/chart`, `/v1/research`, `/v1/web/search`, `/v1/intent` (see plan §5).
 - **Streamlit** — UI only; calls the API over HTTP (stateless `messages[]` recommended in plan §10).
@@ -54,13 +78,19 @@ Full layout, API contract, and checklist: **[Telecom_Billing_Assistant_app_plan_
 
 ---
 
-## Dependencies (Phase 1)
+## Key Dependencies (v1)
 
 | Package | Purpose |
 |---------|---------|
 | `fpdf2` | Generate synthetic PDFs in `generate_data.py` |
-
-Phase 2 will add FastAPI, Streamlit, embeddings/FAISS, etc. — see the application plan and future `requirements.txt` updates.
+| `fastapi`, `uvicorn` | API server and local development runtime |
+| `streamlit`, `httpx` | UI client and API communication |
+| `plotly` | Billing chart visualizations |
+| `duckduckgo-search` | External market-plan lookup |
+| `langchain`, `langchain-community` | Document loading/chunking orchestration |
+| `langchain-ollama`, `langchain-openai` | Embedding provider integrations |
+| `faiss-cpu` | Vector index and semantic retrieval |
+| `pypdf` | PDF processing support |
 
 ---
 
@@ -77,6 +107,44 @@ git add -A
 git status   # review
 git commit -m "Phase 1: synthetic data, generator script, application plan, README"
 ```
+
+---
+
+## Runbook (Demo Day)
+
+Start in this order:
+
+1. **Ollama** (Terminal 1):
+   - `ollama serve`
+2. **FastAPI** (Terminal 2):
+   - `uvicorn deploy.server:app --host 127.0.0.1 --port 8001 --reload`
+3. **Streamlit** (Terminal 3):
+   - `streamlit run app.py --server.port 8501`
+
+Open:
+
+- UI: `http://localhost:8501`
+- API docs: `http://127.0.0.1:8001/docs`
+
+---
+
+## UI Screenshots
+
+### Billing Q&A
+
+![Billing Q&A](docs/screenshots/billing-qna.png)
+
+### Visual Charts
+
+![Visual Charts](docs/screenshots/visual-charts.png)
+
+### Dispute Analysis
+
+![Dispute Analysis](docs/screenshots/dispute-analysis.png)
+
+### Web Search
+
+![Web Search](docs/screenshots/web-search.png)
 
 ---
 
