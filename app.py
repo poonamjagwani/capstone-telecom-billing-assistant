@@ -358,7 +358,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True,
 )
 st.sidebar.header("Controls")
-# Apply tab-triggered mode change *before* creating mode widget.
+# Apply tab-triggered mode change before handling requests.
 if st.session_state.requested_mode:
     st.session_state.mode_select = st.session_state.requested_mode
     st.session_state.requested_mode = ""
