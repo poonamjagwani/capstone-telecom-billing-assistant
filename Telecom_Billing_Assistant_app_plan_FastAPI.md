@@ -325,3 +325,4 @@ Use **`scripts/generate_data.py`** to emit everything in one run; the list below
 | 2026-03-25 | Per-document `*_summary.json` for billing + policy; **multiple POSTs** as chosen API; **stateless `messages`** recommended; §12 implementation phases (data first); expanded **error handling** scope (§11). |
 | 2026-03-25 | Added §8.4 production note: sidecar JSON as capstone simulation vs APIs/ETL/extraction in live systems. |
 | 2026-03-25 | Added §12.1 dataset file creation order (dirs → policy pairs → billing pairs by month; optional rollup; FAISS not Phase 1). |
+| 2026-03-29 | Phase 2 v1 implemented: FastAPI + Streamlit flows operational (`rag`, `chart`, `research`, `web`) with FAISS retrieval, mockup-aligned UI, per-tab history, and improved web result relevance ranking. |

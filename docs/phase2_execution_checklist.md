@@ -29,9 +29,12 @@ This checklist translates `Telecom_Billing_Assistant_app_plan_FastAPI.md` into i
 ## 5) Validation
 - [x] Smoke test each route with one happy-path request
 - [x] Validate Feb anomaly and Mar credit flows in chart + research paths
-- [ ] Update README run instructions for three processes (Ollama, FastAPI, Streamlit)
+- [x] Update README run instructions for three processes (Ollama, FastAPI, Streamlit)
 
 ## 6) Hardening (after happy path)
 - [ ] Optional pytest smoke tests
-- [ ] Improve intent classifier (LLM-assisted fallback)
+- [x] Improve intent classifier baseline for policy-vs-dispute routing
+- [x] Improve web search quality with telecom relevance + price-aware ranking
+- [x] Implement per-tab chat memory in Streamlit
+- [x] Preserve chart rendering and sources in tab history
 - [ ] Add lightweight caching for index/data loading
